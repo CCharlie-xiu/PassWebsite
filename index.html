@@ -4,9 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Webpixels">
-    <title>Quick – Website UI Kit (FREE)</title>
+    <meta name="description" content="一些有趣的事情正在发生">
+    <meta name="author" content="wuchanghua">
+	<script src="assets/libs/jquery/dist/jquery.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery.simplePagination.min.js"></script> -->
+    <title>吴昌桦wuchanghua</title>
     <!-- Preloader -->
     <style>
         @keyframes hidePreloader {
@@ -61,12 +63,21 @@
 			background-size: cover;
 			margin-bottom: 1vh;
 		}
-		#touch_avatar {
+		#touch_avatar, .card {
 			cursor: pointer;
 		}
 		.logo_style {
 			width: 20vh;
 			height: 13vh;
+		}
+		#pagination-container {
+			margin-bottom: 2vh;
+			z-index: 101;
+			transform: translateY(-3vh);
+		}
+		.slices {
+			position: relative;
+			padding-bottom: 0;
 		}
     </style>
     <script>
@@ -152,6 +163,11 @@
             </div>
         </div>
     </section>
+	<section class="pt-lg-6 pb-0 text-center">
+		<h5>🌺有个漂亮老婆<strong class="text-primary"> sui.mo</strong></h5>
+		<p>速速围观（Onlookers quickly）</p>
+		<a href="./slide.html" class="text-primary text-underline--dashed">前往仙女主页看看<i data-feather="arrow-right" class="ml-2"></i></a>
+	</section>
     <section class="slice slice-lg pt-lg-6 pb-0 bg-section-secondary" id="detail">
         <div class="container">
             <!-- Title -->
@@ -171,6 +187,7 @@
             <div class="row mt-5 text-center">
                 <div class="col-md-3">
                     <div class="card">
+						<a href="#study">
                         <div class="card-body pb-5">
                             <div class="pt-4 pb-5">
                                 <img src="assets/img/svg/illustrations/illustration-5.svg" class="img-fluid img-center" style="height: 150px;" alt="Illustration" />
@@ -178,10 +195,12 @@
                             <h5 class="h4 lh-130 mb-3">学习</h5>
                             <p class="text-muted mb-0">安装教程，web前端教学</p>
                         </div>
+						</a>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card">
+						<a href="#">
                         <div class="card-body pb-5">
                             <div class="pt-4 pb-5">
                                 <img src="assets/img/svg/illustrations/illustration-6.svg" class="img-fluid img-center" style="height: 150px;" alt="Illustration" />
@@ -189,10 +208,12 @@
 							<h5 class="h4 lh-130 mb-3">工具</h5>
 							<p class="text-muted mb-0">在线编辑，转码，json校验</p>
                         </div>
+						</a>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card">
+						<a href="#">
                         <div class="card-body pb-5">
                             <div class="pt-4 pb-5">
                                 <img src="assets/img/svg/illustrations/illustration-7.svg" class="img-fluid img-center" style="height: 150px;" alt="Illustration" />
@@ -200,6 +221,7 @@
                             <h5 class="h4 lh-130 mb-3">娱乐</h5>
                             <p class="text-muted mb-0">视频，网页游戏，全免音乐</p>
                         </div>
+						</a>
                     </div>
                 </div>
             </div>
@@ -214,7 +236,7 @@
         </div>
         <!-- Container -->
         <div class="container position-relative zindex-100">
-            <div class="col">
+            <div class="col" id="study">
                 <div class="row justify-content-center">
                     <div class="col-md-10 text-center">
                         <div class="mt-4 mb-6">
@@ -228,47 +250,32 @@
             </div>
         </div>
     </section>
-    <section class="slice pt-0">
+    <section class="slices pt-0">
+<!-- 		<script>
+			var perPage = 2;
+			var numItems = $(".page").length;
+			$("#pagination-container").pagination({
+				item: numItems,
+				itemsOnPage: perPage,
+				prev: "&laquo;",
+				next: "&raquo;",
+				OnPageClick: function(pageNumber) {
+					var from = perPage * (pageNumber - 1);
+					var to = from + perPage;
+					$(".page").hide().slice(from, to).show()
+				}
+			});
+		</script> -->
         <div class="container position-relative zindex-100">
-            <div class="row">
-                <div class="col-xl-4 col-sm-6 mt-n7">
+            <div class="row" id="list-wrapper">
+                <div class="col-xl-4 col-sm-6 mt-xl-n7 page">
                     <div class="card">
                         <div class="d-flex p-5">
                             <div>
-                                <span class="badge badge-warning badge-pill">New</span>
-                            </div>
-                            <div class="pl-4">
-                                <h5 class="lh-130">Listen to the nature</h5>
-                                <p class="text-muted mb-0">
-                                    Design made simple with a clean and smart HTML markup.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-sm-6 mt-sm-n7">
-                    <div class="card">
-                        <div class="d-flex p-5">
-                            <div>
-                                <span class="badge badge-success badge-pill">Tips</span>
-                            </div>
-                            <div class="pl-4">
-                                <h5 class="lh-130">Rules not to follow</h5>
-                                <p class="text-muted mb-0">
-                                    Design made simple with a clean and smart HTML markup.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-12 col-sm-6 mt-xl-n7">
-                    <div class="card">
-                        <div class="d-flex p-5">
-                            <div>
-                                <span class="badge badge-danger badge-pill">Update</span>
+                                <span class="badge badge-danger badge-pill">Video</span>
                             </div>
                             <div class="pl-3">
-                                <h5 class="lh-130">Beware the water</h5>
+                                <h5 class="lh-130">滚动条样式修改</h5>
                                 <p class="text-muted mb-0">
                                     Design made simple with a clean and smart HTML markup.
                                 </p>
@@ -276,56 +283,243 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
+				<div class="col-xl-4 col-sm-6 mt-xl-n7 page">
+				    <div class="card">
+				        <div class="d-flex p-5">
+				            <div>
+				                <span class="badge badge-danger badge-pill">Video</span>
+				            </div>
+				            <div class="pl-3">
+				                <h5 class="lh-130">滚动条样式修改</h5>
+				                <p class="text-muted mb-0">
+				                    Design made simple with a clean and smart HTML markup.
+				                </p>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<div class="col-xl-4 col-sm-6 mt-xl-n7 page">
+				    <div class="card">
+				        <div class="d-flex p-5">
+				            <div>
+				                <span class="badge badge-danger badge-pill">Video</span>
+				            </div>
+				            <div class="pl-3">
+				                <h5 class="lh-130">滚动条样式修改</h5>
+				                <p class="text-muted mb-0">
+				                    Design made simple with a clean and smart HTML markup.
+				                </p>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+             </div>  
+			<div id="pagination-container" class="text-right">
+				<a href="#" class="text-primary text-underline--dashed">More video<i data-feather="arrow-right" class="ml-2"></i></a>
+			</div>
+          <div class="row">
                 <div class="col-xl-4 col-sm-6">
                     <div class="card">
                         <div class="d-flex p-5">
                             <div>
-                                <span class="badge badge-warning badge-pill">New</span>
+                                <span class="badge badge-success badge-pill">CSDN</span>
                             </div>
                             <div class="pl-4">
-                                <h5 class="lh-130">Listen to the nature</h5>
+                                <h5 class="lh-130">Web前后端开发</h5>
                                 <p class="text-muted mb-0">
-                                    Design made simple with a clean and smart HTML markup.
+                                   Web front-end and back-end development
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-sm-6">
-                    <div class="card">
-                        <div class="d-flex p-5">
-                            <div>
-                                <span class="badge badge-success badge-pill">Tips</span>
-                            </div>
-                            <div class="pl-4">
-                                <h5 class="lh-130">Rules not to follow</h5>
-                                <p class="text-muted mb-0">
-                                    Design made simple with a clean and smart HTML markup.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-12 col-sm-6">
-                    <div class="card">
-                        <div class="d-flex p-5">
-                            <div>
-                                <span class="badge badge-danger badge-pill">Update</span>
-                            </div>
-                            <div class="pl-3">
-                                <h5 class="lh-130">Beware the water</h5>
-                                <p class="text-muted mb-0">
-                                    Design made simple with a clean and smart HTML markup.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+				<div class="col-xl-4 col-sm-6">
+				    <div class="card">
+				        <div class="d-flex p-5">
+				            <div>
+				                <span class="badge badge-success badge-pill">CSDN</span>
+				            </div>
+				            <div class="pl-4">
+				                <h5 class="lh-130">Web前后端开发</h5>
+				                <p class="text-muted mb-0">
+				                  Web front-end and back-end development
+				                </p>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<div class="col-xl-4 col-sm-6">
+				    <div class="card">
+				        <div class="d-flex p-5">
+				            <div>
+				                <span class="badge badge-success badge-pill">CSDN</span>
+				            </div>
+				            <div class="pl-4">
+				                <h5 class="lh-130">Web前后端开发</h5>
+				                <p class="text-muted mb-0">
+				                   Web front-end and back-end development
+				                </p>
+				            </div>
+				        </div>
+				    </div>
+				</div>
             </div>
+			<div id="pagination-container" class="text-right">
+				<a href="#" class="text-primary text-underline--dashed">More csdn<i data-feather="arrow-right" class="ml-2"></i></a>
+			</div>
+			
         </div>
+
     </section>
+	<section class="slices">
+	    <div class="container">
+	        <div class="row">
+	            <div class="col-lg-2">
+	                <div class="card text-center hover-translate-y-n10 hover-shadow-lg">
+	                    <div class="px-3 pb-3 pt-3">
+							💡
+	                        <h6 class="">w3school</h6>
+							<p>各种语言教程（超详细）</p>
+	                        <div class="mt-2">
+	                            <a href="#" class="link-underline-warning">Go</a>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="col-lg-2">
+	                <div class="card text-center hover-translate-y-n10 hover-shadow-lg">
+	                    <div class="px-3 pb-3 pt-3">
+							💡
+	                        <h6 class="">脚本之家</h6>
+							<P>有别人写好的脚本可以直接使用</P>
+	                        <div class="mt-2">
+	                            <a href="#" class="link-underline-warning">Go</a>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="col-lg-2">
+	                <div class="card text-center hover-translate-y-n10 hover-shadow-lg">
+	                    <div class="px-3 pb-3 pt-3">
+							💡
+	                        <h6 class="">Python3</h6>
+							<p>python在线编辑器(菜鸟教程)</p>
+	                        <div class="mt-2">
+	                            <a href="#" class="link-underline-warning">Go</a>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+				<div class="col-lg-2">
+				    <div class="card text-center hover-translate-y-n10 hover-shadow-lg">
+				        <div class="px-3 pb-3 pt-3">
+							💡
+				            <h6 class="">Backgrounds</h6>
+							<p>backgrounds(背景图生成)</p>
+				            <div class="mt-2">
+				                <a href="#" class="link-underline-warning">Go</a>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<div class="col-lg-2">
+				    <div class="card text-center hover-translate-y-n10 hover-shadow-lg">
+				        <div class="px-3 pb-3 pt-3">
+							💡
+				            <h6 class="">Pixels</h6>
+							<p>各种高画质素材图片视频</p>
+				            <div class="mt-2">
+				                <a href="#" class="link-underline-warning">Go</a>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<div class="col-lg-2">
+				    <div class="card text-center hover-translate-y-n10 hover-shadow-lg">
+				        <div class="px-3 pb-3 pt-3">
+							💡
+				            <h6 class="">Midjourney</h6>
+							<p>AI 只能绘画绝美图片</p>
+				            <div class="mt-2">
+				                <a href="#" class="link-underline-warning">Go</a>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+	        </div>
+			<div id="pagination-container" class="text-right">
+				<a href="#" class="text-primary text-underline--dashed">More csdn<i data-feather="arrow-right" class="ml-2"></i></a>
+			</div>
+	    </div>
+	</section>
+	<section class="slice bg-dark">
+	    <div class="container py-5">
+	        <div class="row row-grid align-items-center">
+	            <div class="text-center text-lg-left col-lg-7 col-6">
+	                <!-- Heading -->
+	                <h1 class="text-white mb-4">
+	                    专门的视频频道
+	                </h1>
+	                <!-- Text -->
+	                <p class="lead text-white opacity-8">
+	                    Dedicated video channels
+	                </p>
+	                <!-- Buttons -->
+	                <div class="mt-5">
+	                    <a href="#" class="btn btn-warning btn-lg btn-icon">
+	                        <span class="btn-inner--icon">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+									<path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z"/>
+								</svg>
+	                        </span>
+	                        <span class="btn-inner--text">立即前往</span>
+	                    </a>
+	                </div>
+					<div class="py-5">
+						<h6 class="text-white">让乐趣永远围绕你 --- 来点游戏</h6>
+						<p>Let the fun always be around you</p>
+						<div class="row">
+							<div class="col-4">
+							    <h6 class="heading mb-3 text-white">Game</h6>
+							    <ul class="list-unstyled text-break">
+							        <li><a href="#">xxxx</a></li>
+							        <li><a href="#">xxxx</a></li>
+							    </ul>
+							</div>
+							<div class="col-4">
+							    <h6 class="heading mb-3 text-white">Game</h6>
+							    <ul class="list-unstyled text-break">
+							        <li><a href="#">xxxx</a></li>
+							        <li><a href="#">xxxx</a></li>
+							    </ul>
+							</div>
+							<div class="col-4">
+							    <h6 class="heading mb-3 text-white">Game</h6>
+							    <ul class="list-unstyled text-break">
+							        <li><a href="#">xxxx</a></li>
+							        <li><a href="#">xxxx</a></li>
+							    </ul>
+							</div>
+						</div>
+						
+					</div>
+	            </div>
+				<div class="col-lg-3 col-6">
+				    <img src="assets/img/backgrounds/A1.png" alt="Image" class="rounded-lg img-fluid" />
+				    <div class="text-right mt-4">
+				        <img src="assets/img/backgrounds/avatar.png" alt="Image" class="rounded-lg img-fluid w-50" />
+				    </div>
+				</div>
+	        </div>
+			
+	    </div>
+	    <!-- SVG separator -->
+	    <div class="shape-container shape-line shape-position-bottom">
+	        <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 2560 100" style="enable-background:new 0 0 2560 100;" xml:space="preserve" class="">
+	            <polygon points="2560 0 2560 100 0 100"></polygon>
+	        </svg>
+	    </div>
+	</section>
     <section class="slice slice-lg bg-section-secondary">
         <div class="container text-center">
             <div class="row justify-content-center mb-6">
@@ -345,7 +539,7 @@
                 <p class="mb-2">
                     来看看源码，和我一起建站
                 </p>
-                <a href="#" class="text-primary text-underline--dashed">Contact us<i data-feather="arrow-right" class="ml-2"></i></a>
+                <a href="#" class="text-primary text-underline--dashed">Contact<i data-feather="arrow-right" class="ml-2"></i></a>
             </div>
         </div>
     </section>
@@ -422,7 +616,6 @@
         </div>
     </footer>
     <!-- Core JS  -->
-    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/libs/svg-injector/dist/svg-injector.min.js"></script>
     <script src="assets/libs/feather-icons/dist/feather.min.js"></script>
