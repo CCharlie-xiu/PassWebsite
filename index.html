@@ -79,6 +79,19 @@
 			position: relative;
 			padding-bottom: 0;
 		}
+		.state {
+			top: 0;
+			left: 0;
+			animation: tranRotate infinite ease-in-out 3s;
+		}
+		@keyframes tranRotate {
+			0% {
+				transform: translateY(0vh) rotateY(0);
+			}
+			50% {
+				transform: translateY(-3vh) rotateY(30deg);
+			}
+		}
     </style>
     <script>
         window.addEventListener("load", function() {
@@ -137,11 +150,12 @@
     <!-- Main content -->
     <section class="slice">
         <div class="container">
-            <div class="row row-grid align-items-center">
+            <div class="row row-grid">
                 <div class="col-12 col-md-5 col-lg-6 order-md-2 text-center">
                     <!-- Image -->
                     <figure class="w-100">
-                        <img alt="Image placeholder" src="assets/img/backgrounds/Thinking face-rafiki.png" class="img-fluid mw-md-120">
+                        <img alt="Image placeholder" src="assets/img/backgrounds/Q1.png" class=" mw-md-120 img-fluid position-relative">
+                        <img alt="Image placeholder" src="assets/img/backgrounds/Q2.png" class=" mw-md-120 img-fluid position-absolute state">
                     </figure>
                 </div>
                 <div class="col-12 col-md-7 col-lg-6 order-md-1 pr-md-5">
@@ -270,47 +284,53 @@
             <div class="row" id="list-wrapper">
                 <div class="col-xl-4 col-sm-6 mt-xl-n7 page">
                     <div class="card">
-                        <div class="d-flex p-5">
-                            <div>
-                                <span class="badge badge-danger badge-pill">Video</span>
-                            </div>
-                            <div class="pl-3">
-                                <h5 class="lh-130">滚动条样式修改</h5>
-                                <p class="text-muted mb-0">
-                                    Design made simple with a clean and smart HTML markup.
-                                </p>
-                            </div>
-                        </div>
+						<a href="https://www.bilibili.com/video/BV16Y411w7st/?spm_id_from=333.999.0.0&vd_source=b68671693b180bbab8e0ad517af55cfb" target="_blank">
+							<div class="d-flex p-5">
+								<div>
+									<span class="badge badge-danger badge-pill">Video</span>
+								</div>
+								<div class="pl-3">
+									<h5 class="lh-130">滚动条样式修改</h5>
+									<p class="text-muted mb-0">
+										<img src="assets/img/backgrounds/X1.PNG" alt="" class="w-100">
+									</p>
+								</div>
+							</div>
+						</a>
                     </div>
                 </div>
 				<div class="col-xl-4 col-sm-6 mt-xl-n7 page">
 				    <div class="card">
-				        <div class="d-flex p-5">
-				            <div>
-				                <span class="badge badge-danger badge-pill">Video</span>
-				            </div>
-				            <div class="pl-3">
-				                <h5 class="lh-130">滚动条样式修改</h5>
-				                <p class="text-muted mb-0">
-				                    Design made simple with a clean and smart HTML markup.
-				                </p>
-				            </div>
-				        </div>
+				        <a href="https://www.bilibili.com/video/BV1y34y1H7rk/?spm_id_from=333.999.0.0&vd_source=b68671693b180bbab8e0ad517af55cfb" target="_blank">
+				        	<div class="d-flex p-5">
+				        		<div>
+				        			<span class="badge badge-danger badge-pill">Video</span>
+				        		</div>
+				        		<div class="pl-3">
+				        			<h5 class="lh-130">js数据图形化</h5>
+				        			<p class="text-muted mb-0">
+				        				<img src="assets/img/backgrounds/X2.png" alt="" class="w-100">
+				        			</p>
+				        		</div>
+				        	</div>
+				        </a>
 				    </div>
 				</div>
 				<div class="col-xl-4 col-sm-6 mt-xl-n7 page">
 				    <div class="card">
-				        <div class="d-flex p-5">
-				            <div>
-				                <span class="badge badge-danger badge-pill">Video</span>
-				            </div>
-				            <div class="pl-3">
-				                <h5 class="lh-130">滚动条样式修改</h5>
-				                <p class="text-muted mb-0">
-				                    Design made simple with a clean and smart HTML markup.
-				                </p>
-				            </div>
-				        </div>
+				        <a href="https://www.bilibili.com/video/BV1CT4y1S7m9/?spm_id_from=333.999.0.0&vd_source=b68671693b180bbab8e0ad517af55cfb" target="_blank">
+				        	<div class="d-flex p-5">
+				        		<div>
+				        			<span class="badge badge-danger badge-pill">Video</span>
+				        		</div>
+				        		<div class="pl-3">
+				        			<h5 class="lh-130">HTML表单制作</h5>
+				        			<p class="text-muted mb-0">
+				        				<img src="assets/img/backgrounds/X3.png" alt="" class="w-100">
+				        			</p>
+				        		</div>
+				        	</div>
+				        </a>
 				    </div>
 				</div>
              </div>  
@@ -320,47 +340,53 @@
           <div class="row">
                 <div class="col-xl-4 col-sm-6">
                     <div class="card">
+						<a href="https://blog.csdn.net/qq_50767141/article/details/126981054?spm=1001.2014.3001.5501" target="_blank">
                         <div class="d-flex p-5">
                             <div>
                                 <span class="badge badge-success badge-pill">CSDN</span>
                             </div>
                             <div class="pl-4">
-                                <h5 class="lh-130">Web前后端开发</h5>
+                                <h5 class="lh-130">【nodejs】</h5>
                                 <p class="text-muted mb-0">
-                                   Web front-end and back-end development
+                                    明文加密npm引入
                                 </p>
                             </div>
                         </div>
+						</a>
                     </div>
                 </div>
 				<div class="col-xl-4 col-sm-6">
 				    <div class="card">
+						<a href="https://blog.csdn.net/qq_50767141/article/details/124093459?spm=1001.2014.3001.5501" target="_blank">
 				        <div class="d-flex p-5">
 				            <div>
 				                <span class="badge badge-success badge-pill">CSDN</span>
 				            </div>
 				            <div class="pl-4">
-				                <h5 class="lh-130">Web前后端开发</h5>
+				                <h5 class="lh-130">【服务集群】</h5>
 				                <p class="text-muted mb-0">
-				                  Web front-end and back-end development
+				                  必须知道几个点
 				                </p>
 				            </div>
 				        </div>
+						</a>
 				    </div>
 				</div>
 				<div class="col-xl-4 col-sm-6">
 				    <div class="card">
+						<a href="https://blog.csdn.net/qq_50767141/article/details/113922847?spm=1001.2014.3001.5501" target="_blank">
 				        <div class="d-flex p-5">
 				            <div>
 				                <span class="badge badge-success badge-pill">CSDN</span>
 				            </div>
 				            <div class="pl-4">
-				                <h5 class="lh-130">Web前后端开发</h5>
+				                <h5 class="lh-130">【Linux】</h5>
 				                <p class="text-muted mb-0">
-				                   Web front-end and back-end development
+				                   生成可执行文件
 				                </p>
 				            </div>
 				        </div>
+						</a>
 				    </div>
 				</div>
             </div>
@@ -376,6 +402,7 @@
 	        <div class="row">
 	            <div class="col-lg-2">
 	                <div class="card text-center hover-translate-y-n10 hover-shadow-lg">
+						<a href="https://www.w3school.com.cn/">
 	                    <div class="px-3 pb-3 pt-3">
 							💡
 	                        <h6 class="">w3school</h6>
@@ -384,22 +411,26 @@
 	                            <a href="#" class="link-underline-warning">Go</a>
 	                        </div>
 	                    </div>
+						</a>
 	                </div>
 	            </div>
 	            <div class="col-lg-2">
 	                <div class="card text-center hover-translate-y-n10 hover-shadow-lg">
+						<a href="https://storyset.com/">
 	                    <div class="px-3 pb-3 pt-3">
 							💡
-	                        <h6 class="">脚本之家</h6>
-							<P>有别人写好的脚本可以直接使用</P>
+	                        <h6 class="">storySet</h6>
+							<P>有意思的各种格式卡通图片</P>
 	                        <div class="mt-2">
 	                            <a href="#" class="link-underline-warning">Go</a>
 	                        </div>
 	                    </div>
+						</a>
 	                </div>
 	            </div>
 	            <div class="col-lg-2">
 	                <div class="card text-center hover-translate-y-n10 hover-shadow-lg">
+						<a href="https://c.runoob.com/compile/9/">
 	                    <div class="px-3 pb-3 pt-3">
 							💡
 	                        <h6 class="">Python3</h6>
@@ -408,10 +439,12 @@
 	                            <a href="#" class="link-underline-warning">Go</a>
 	                        </div>
 	                    </div>
+						</a>
 	                </div>
 	            </div>
 				<div class="col-lg-2">
 				    <div class="card text-center hover-translate-y-n10 hover-shadow-lg">
+						<a href="https://coolbackgrounds.io/">
 				        <div class="px-3 pb-3 pt-3">
 							💡
 				            <h6 class="">Backgrounds</h6>
@@ -420,10 +453,12 @@
 				                <a href="#" class="link-underline-warning">Go</a>
 				            </div>
 				        </div>
+						</a>
 				    </div>
 				</div>
 				<div class="col-lg-2">
 				    <div class="card text-center hover-translate-y-n10 hover-shadow-lg">
+						<a href="https://www.pexels.com/zh-cn/">
 				        <div class="px-3 pb-3 pt-3">
 							💡
 				            <h6 class="">Pixels</h6>
@@ -432,10 +467,12 @@
 				                <a href="#" class="link-underline-warning">Go</a>
 				            </div>
 				        </div>
+						</a>
 				    </div>
 				</div>
 				<div class="col-lg-2">
 				    <div class="card text-center hover-translate-y-n10 hover-shadow-lg">
+						<a href="https://www.midjourney.com/home/">
 				        <div class="px-3 pb-3 pt-3">
 							💡
 				            <h6 class="">Midjourney</h6>
@@ -444,11 +481,12 @@
 				                <a href="#" class="link-underline-warning">Go</a>
 				            </div>
 				        </div>
+						</a>
 				    </div>
 				</div>
 	        </div>
 			<div id="pagination-container" class="text-right">
-				<a href="#" class="text-primary text-underline--dashed">More csdn<i data-feather="arrow-right" class="ml-2"></i></a>
+				<a href="#" class="text-primary text-underline--dashed">More tool<i data-feather="arrow-right" class="ml-2"></i></a>
 			</div>
 	    </div>
 	</section>
@@ -480,24 +518,24 @@
 						<p>Let the fun always be around you</p>
 						<div class="row">
 							<div class="col-4">
-							    <h6 class="heading mb-3 text-white">Game</h6>
+							    <h6 class="heading mb-3 text-white">Game1</h6>
 							    <ul class="list-unstyled text-break">
-							        <li><a href="#">xxxx</a></li>
-							        <li><a href="#">xxxx</a></li>
+							        <li class="mb-3"><a href="https://www.dbbqb.com/">逗比拯救世界</a></li>
+							        <li><a href="https://saythemoney.github.io/">支付宝到账音效</a></li>
 							    </ul>
 							</div>
 							<div class="col-4">
-							    <h6 class="heading mb-3 text-white">Game</h6>
+							    <h6 class="heading mb-3 text-white">Game2</h6>
 							    <ul class="list-unstyled text-break">
-							        <li><a href="#">xxxx</a></li>
-							        <li><a href="#">xxxx</a></li>
+							        <li class="mb-3"><a href="https://toolwa.com/record/">在线屏幕录制</a></li>
+							        <li><a href="https://pvz.heheda.top/">植物大战僵尸</a></li>
 							    </ul>
 							</div>
 							<div class="col-4">
-							    <h6 class="heading mb-3 text-white">Game</h6>
+							    <h6 class="heading mb-3 text-white">Game3</h6>
 							    <ul class="list-unstyled text-break">
-							        <li><a href="#">xxxx</a></li>
-							        <li><a href="#">xxxx</a></li>
+							        <li class="mb-3"><a href="https://lvyueyang.github.io/web-music/app/">周杰伦歌单</a></li>
+							        <li><a href="http://liferestart.syaro.io/view/">人生模拟器</a></li>
 							    </ul>
 							</div>
 						</div>
