@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>看你所看</title>
+		<!-- ============ localStyle ========== -->
+		<style>
+			/* 设置滚动条的样式 */
+			::-webkit-scrollbar {
+				width:12px;
+			}
+			/* 滚动槽 */
+			::-webkit-scrollbar-track {
+				-webkit-box-shadow:inset 0 0 6px #003153
+				border-radius:10px;
+			}
+			/* 滚动条滑块 */
+			::-webkit-scrollbar-thumb {
+				border-radius:10px;
+				background:rgba(255, 170, 255, 0.1);
+				-webkit-box-shadow:inset 0 0 6px #d80835;
+			}
+			::-webkit-scrollbar-thumb:window-inactive {
+				background: rgba(255,0,0,0.4);
+			}
+			body {
+				background-color: #f7f8fa;
+				overflow: hidden;
+			}
+			
+			a {
+				text-decoration: none;
+				color: #000;
+			}
+			span {
+				color: #37c;
+			}
+			.center {
+				display: flex;
+			}
+			.logo {
+				position: absolute;
+				top: 20px;
+				left: 20px;
+			}
+			.selonwer {
+				position: absolute;
+				top: 20px;
+				right: 20px;
+			}
+			.center-screan {
+				width: 65%;
+				margin-top: 40px;
+				margin-left: 20px;
+				position: relative;
+				border-right: 2px solid #01847f;
+			}
+			iframe {
+				width: 80%;
+				margin: 20px;
+				padding: 24px;
+				background-color: #fff;
+				border-radius: 20px;
+				box-shadow: 0 8px 12px #ebedf0;
+			}
+			.search {
+				margin: auto;
+				width: 30vw;
+				position: relative;
+			}
+			input {
+				width: 100%;
+				font-size: 18px;
+				transition: 0.4s ease;
+				border: 1px solid #999;
+				background: none;
+				border: none;
+			}
+			input:focus {
+				outline: none;
+			}
+			label {
+				position: absolute;
+				height: 2px;
+				left: 0;
+				top: 0;
+				transition: 0.4s ease;
+				z-index: -1;
+			}
+			.bar {
+				position: absolute;
+				width: 0;
+				height: 2px;
+				bottom: 0;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background-color: #5264ae;
+				transition: 0.4s ease;
+			}
+			input:focus ~ .bar {
+				width: 100%;
+			}
+			.search input:valid ~ label {
+				color: #5264ae;
+				transform: translateX(-160px);
+				font-size: 16px;
+			}
+			.search input:focus ~ label {
+				color: #5264ae;
+				transform: translateX(-160px);
+				font-size: 16px;
+			}
+			/* input {
+				width: 24vw;
+				height: 42px;
+				background-color: #4fc08d;
+				border-radius: 12px;
+				border: none;
+				padding: 0px 30px;
+				font-size: 18px;
+				color: #fff;
+				margin: 2px 10px;
+			} */
+			/* .title {
+				color: #34495e;
+				font-size: 15px;
+				line-height: 26px;
+				margin: 0 30px;
+				padding: 10px 0;
+				display: block;
+				width: 15vw;
+			} *//* 
+			.search {
+				width: 60%;
+				display: flex;
+				text-align: center;
+			} */
+			
+			.center-menu {
+				width: 35%;
+				height: 88vh;
+				margin-top: 40px;
+				overflow: auto;
+			}
+			
+			#main {
+				width: 83%;
+				margin: 20px auto;
+			}
+			
+			.picture {
+				cursor: pointer;
+				width: 16%;
+				float: left;
+				margin: 6px;
+				height: 10vh;
+				border-radius: 6px;
+				box-shadow: 0 8px 12px #ebedf0;
+				font-size: 12px;
+				text-align: center;
+				background-color: #fff;
+				display: inline-block;
+			}
+			
+			.session {
+				width: 100%;
+				color: #01847f;
+				font-size: 12px;
+			}
+			
+			.insert {
+				margin-top: 3px;
+			}
+			
+			.inserts {
+				display: inline-block;
+				width: 100%;
+			}
+			
+			.sessions {
+				width: 100%;
+				color: #d80835;
+				font-size: 16px;
+				font-weight: 600;
+			}
+			
+			.part {
+				color: #470024;
+				font-size: 16px;
+				font-weight: 600;
+			}
+			.box {
+				display: inline-block;
+			}
+			
+			.warning {
+				display: inline-block;
+				margin: 20px 0;
+				width: 100%;
+				text-align: center;
+				color: #999aaa;
+			}
+			.xiu {
+				width: 100%;
+				position: absolute;
+				bottom: -1vh;
+				display: flex;
+				justify-content: center;
+			}
+			.text {
+				display: flex;
+				align-items: center;
+			}
+			.pink {
+				transform: translateY(-15px);
+				width: 100%;
+				height: 16px;
+				background-color: #ff076e;
+			}
+			ul {
+				list-style: none;
+				display: flex;
+			}
+			ul li {
+				margin: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="logo">💖 歪瑞Funny</div>
+		<div class="selonwer">😎 欢迎你！<span>吴夫人/陈女士</span> </div>
+		<div class="center">
+			<div class="center-screan">
+				<iframe src="" frameborder="0" height="60%" allowfullscreen= "true" name="show"></iframe>
+				<div class="search">
+					<input type="text" required><span class="bar"></span><label for="username">🔍 输入想看的链接： </label>
+				</div>
+				<div class="xiu">
+					<div class="text">前往搜索更多的视频 📺</div>
+					<ul>
+						<li> <a href="https://www.mgtv.com/" target="_blank"> 芒果Tv 🥭</a> </li>
+						<li> <a href="https://v.qq.com/" target="_blank"> 腾讯视频 🐧</a> </li>
+						<li> <a href="https://www.iqiyi.com/" target="_blank"> 爱奇艺 🥝</a> </li>
+						<li> <a href="https://www.bilibili.com/" target="_blank"> BilBili 🧁</a> </li>
+						<li> <a href="https://www.douyin.com/" target="_blank"> 抖音 🎶</a> </li>
+					</ul>
+				</div>	
+			</div>
+			<div class="center-menu" οnmοusedοwn="show_element(event)">
+				<div id="main"><div class="section"></div></div>
+				<div class="warning">已经到底啦 ！ 快去请求更新吧 ! 🤠</div>
+			</div>
+		</div>
+		<script src="/json.js"></script>
+		<!-- =========== Search ================ -->
+		<script>	
+			class main {
+				constructor(id) {
+					this.main = document.querySelector(id);
+					this.init();
+					this.title = document.querySelectorAll('.box');
+					this.update();
+					this.insert = document.querySelectorAll('.insert')
+					for (var i = 0; i < this.insert.length; i++) {
+						//console.log(this.insert[i])
+						this.insert[i].onclick = this.toggle;
+					}
+				}
+				init() {
+					for (var i = 0; i < data.length; i++) {
+						var less = i + 1;
+						var list = `<div class="box"> <div class="inserts" id="${less}">第 <span class="sessions">${less}</span> 季</div> </div>`;
+						this.main.insertAdjacentHTML('beforeend', list);
+					}
+					
+				}
+				update() {
+					for (var i = 0; i < this.title.length; i++) {
+						for (var j = 0; j < data[i].gather.length; j++) {
+							var less = i + 1;
+							var temp = j + 1;
+							var html = `<a target="show" href="https://jx.bozrc.com:4433/player/?url=`+ data[i].gather[j].url +`">
+							<div class="picture"><div class="insert">第 <span class="session">${less}</span> 季 <br> 
+							第 <span class="part">${temp}</span> 集 <br>️</div><div class="pink">▶️</div></a></div>`;
+							this.title[i].insertAdjacentHTML('beforeend',html)
+						}
+					}
+				}
+				toggle(e) {
+					e.stopPropagation();
+					var index = this.id;
+					//console.log(index)
+				}
+			}
+			new main('#main')
+		</script>
+		<script>
+			var width = document.body.clientWidth;
+			var height = document.body.clientHeight;
+			document.addEventListener('click', (e) => {
+				//console.log(e.clientX,e.clientY)
+				//console.log(e.clientY/height)
+				if(e.clientX/width <= 0.88 && e.clientX/width >= 0.7 && e.clientY/height <= 0.9 && e.clientY/height >= 0.8) {
+					
+				}
+			})
+			var input = document.querySelector('input');
+			input.addEventListener("keydown", (event) => {
+				if(event.keyCode == 13) {
+					var keyword = input.value;
+					//console.log("https://jx.bozrc.com:4433/player/?url=" + keyword)
+					document.querySelector('iframe').src = "https://jx.bozrc.com:4433/player/?url=" + keyword
+					
+				}
+			})
+		</script>
+		<!-- =========== e.get ============== -->
+		<script>
+			function show_element(e){
+			    if(!e){
+			      var e = window.event;
+			    }
+			    //获取事件点击元素
+			    var targ = e.target;
+			    //获取元素名称
+			    var tname = targ.tagName;
+			    alert(tname);
+			}
+		</script>
+		<!-- =========== conatiner bubbles ===== -->
+		<div class="conatiner">
+			<div class="bubbles">
+				<span style="--i: 11"></span>
+				<span style="--i: 12"></span>
+				<span style="--i: 24"></span>
+				<span style="--i: 10"></span>
+				<span style="--i: 14"></span>
+				<span style="--i: 23"></span>
+				<span style="--i: 18"></span>
+				<span style="--i: 16"></span>
+				<span style="--i: 19"></span>
+				<span style="--i: 20"></span>
+				<span style="--i: 22"></span>
+				<span style="--i: 25"></span>
+				<span style="--i: 18"></span>
+				<span style="--i: 21"></span>
+				<span style="--i: 15"></span>
+				<span style="--i: 13"></span>
+				<span style="--i: 26"></span>
+				<span style="--i: 17"></span>
+				<span style="--i: 13"></span>
+				<span style="--i: 28"></span>
+				<span style="--i: 11"></span>
+				<span style="--i: 12"></span>
+				<span style="--i: 24"></span>
+				<span style="--i: 10"></span>
+				<span style="--i: 14"></span>
+				<span style="--i: 23"></span>
+				<span style="--i: 18"></span>
+				<span style="--i: 16"></span>
+				<span style="--i: 19"></span>
+				<span style="--i: 20"></span>
+				<span style="--i: 22"></span>
+				<span style="--i: 25"></span>
+				<span style="--i: 18"></span>
+				<span style="--i: 21"></span>
+				<span style="--i: 15"></span>
+				<span style="--i: 13"></span>
+				<span style="--i: 26"></span>
+				<span style="--i: 17"></span>
+				<span style="--i: 13"></span>
+				<span style="--i: 28"></span>
+				<span style="--i: 18"></span>
+				<span style="--i: 16"></span>
+				<span style="--i: 19"></span>
+				<span style="--i: 20"></span>
+				<span style="--i: 22"></span>
+				<span style="--i: 25"></span>
+				<span style="--i: 18"></span>
+				<span style="--i: 21"></span>
+				<span style="--i: 15"></span>
+				<span style="--i: 13"></span>
+				<span style="--i: 26"></span>
+				<span style="--i: 17"></span>
+				<span style="--i: 13"></span>
+				<span style="--i: 28"></span>
+			</div>
+		</div>
+		<style>
+			.container {
+				z-index: -10;
+				position: absolute;
+				width: 100%;
+				height: 100vh;
+				overflow: hidden;
+			}
+			.bubbles {
+				position: relative;
+				display: flex;
+			}
+			.bubbles span {
+				z-index: -10;
+				position: relative;
+				width: 15px;
+				height: 15px;
+				background-color: #ff55ff;
+				margin: 0 4px;
+				border-radius: 50%;
+				box-shadow: 0 0 0 10px #ff55ff44, 
+				0 0 50px #ff55ff, 0 0 100px #ff55ff;
+				animation: animate 15s linear infinite;
+				animation-duration: calc(120s / var(--i));
+			}
+			.bubbles span:nth-child(even) {
+				background-color: #ff5500;
+				box-shadow: 0 0 0 10px #ff550044, 
+				0 0 50px #ff5500, 0 0 100px #ff5500;
+			}
+			@keyframes animate {
+				0% {
+					transform: translateY(1vh)scale(0);
+				}100% {
+					transform: translateY(-100vh)scale(1);
+				}
+			}
+		</style>
+			
+		
+		<!-- =========== limit ================= -->
+		<style>
+			@media screen and (max-width: 1100px){	
+				body {
+					display: none;
+				}
+			}
+		</style>
+		
+		<!-- =========== loadingPart =========== -->
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+		<script>
+		    window.setTimeout(function() {
+		        $(".texts").fadeOut(600);
+		        $(".wrapper").fadeOut(600);
+		        $(".background").fadeOut(1000);
+		    }, 2600)
+		</script>
+		<!-- Created By CodingNepal -->
+		<div class="background">
+			<div class="container-wrapper">
+			   <div class="wrapper">
+			      <div class="loader">
+			         <div class="dot">⭐</div>
+			      </div>
+			      <div class="loader">
+			         <div class="dot">⭐</div>
+			      </div>
+			      <div class="loader">
+			         <div class="dot">⭐</div>
+			      </div>
+			      <div class="loader">
+			         <div class="dot">⭐</div>
+			      </div>
+			      <div class="loader">
+			         <div class="dot">⭐</div>
+			      </div>
+			      <div class="loader">
+			         <div class="dot">⭐</div>
+			      </div>
+			   </div>
+			   <div class="texts">
+			      精彩马上开始
+			   </div>
+			</div>
+		</div>
+		      
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+			.background {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: #5264ae;
+				z-index: 600;
+				overflow: hidden;
+			}
+			.container-wrapper {
+				position: relative;
+				display: inline-block;
+				left: 50%;
+				top: 50%;
+			}
+			.wrapper {
+				position: absolute;
+				top: -35px;
+				transform: scale(1.5);
+			}
+			.loader {
+				height: 25px;
+				width: 1px;
+				position: absolute;
+				animation: rotate 3.5s linear infinite;
+			}
+			.loader .dot {
+				top: 30px;
+				height: 7px;
+				width: 7px;
+				border-radius: 50%;
+				position: relative;
+			}
+			.texts {
+				position: relative;
+				top: 50px;
+				left: -50px;
+				font-weight: 400;
+				color: #fff;
+				text-align: center;
+			}
+			@keyframes rotate {
+				30%{
+					transform: rotate(220deg);
+				}
+				40%{
+				transform: rotate(450deg);
+					opacity: 1;
+				}
+				75%{
+				transform: rotate(720deg);
+				opacity: 1;
+				}
+				76%{
+				opacity: 0;
+				}
+				100%{
+				opacity: 0;
+				transform: rotate(0deg);
+				}
+			}
+			.loader:nth-child(1) {
+				animation-delay: 0.08s;
+			}
+			.loader:nth-child(2) {
+				animation-delay: 0.24s;
+			}
+			.loader:nth-child(3) {
+				animation-delay: 0.40s;
+			}
+			.loader:nth-child(4) {
+				animation-delay: 0.56s;
+			}
+			.loader:nth-child(5) {
+				animation-delay: 0.72s;
+			}
+			.loader:nth-child(6) {
+				animation-delay: 0.88s;
+			}
+		</style>
+		
+	</body>
+</html>
